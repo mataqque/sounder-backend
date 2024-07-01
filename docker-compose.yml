@@ -1,0 +1,9 @@
+services:
+    backend:
+        container_name: backend_pocket
+        restart: always
+        build: .
+        ports:
+            - 8080:8080
+        volumes:
+            - ./pb:/pb/pb_data
