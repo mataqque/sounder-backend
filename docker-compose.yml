@@ -1,9 +1,15 @@
 services:
-    backend:
-        container_name: backend_pocket
+    sounder-backend:
+        container_name: sounder-backend
         restart: always
         build: .
         ports:
             - 8080:8080
         volumes:
             - ./pb:/pb/pb_data
+        networks:
+            - network-sounder
+
+networks:
+    network-sounder:
+        name: network-sounder
