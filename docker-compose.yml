@@ -7,6 +7,7 @@ services:
             - 8080:8080
         volumes:
             - ./pb:/pb/pb_data
+            - ./pb_hooks:/pb/pb_hooks
         networks:
             - network-sounder
 
