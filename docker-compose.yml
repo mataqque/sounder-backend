@@ -4,13 +4,16 @@ services:
         restart: always
         build: .
         ports:
-            - 8080:8080
+            - 5000:8080
+            - 8081:8081
         volumes:
             - ./pb:/pb/pb_data
             - ./pb_hooks:/pb/pb_hooks
         networks:
             - network-sounder
-
+        # command: go run pb/main.go serve --http=0.0.0.0:8080
+        # command: ['/pb/pb_hooks/', 'go run main.go', '--http=0.0.0.0:8080']
+        user: 'root'
 networks:
     network-sounder:
         name: network-sounder
